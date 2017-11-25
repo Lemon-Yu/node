@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <title>Document</title>
+</head>
+<body>
+  <%- include header %>
+  login
+  <form action="/users/login" method="post">
+    username: <input type="text" name="username" class="username" value="">
+    passwoed: <input type="text" name="pwd" class="pwd" value="">
+    <%# <button type="button" name="button" id="btn">tijao</button>%>
+    <input type="submit" name="sub" value="提交">
+  </form>
+  <script src="/js/jquery.js" charset="utf-8"></script>
+  <script type="text/javascript">
+    // var btn = document.querySelector('#btn');
+    //
+    // btn.onclick = function() {
+    //   console.log('sss');
+    //   var username = document.querySelector('.username').value;
+    //   var pwd = document.querySelector('.pwd').value;
+    //   $.ajax({
+    //     url: '/users/login',
+    //     data: {
+    //       username: username,
+    //       pwd: pwd
+    //     },
+    //     type: 'post',
+    //     dataType: 'json',
+    //     success: function(d) {
+    //       console.log(d);
+    //
+    //     }
+    //   })
+    // }
+  </script>
+</body>
+</html>

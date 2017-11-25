@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  listing
+  <table>
+    <tr>
+      <td>序号</td>
+      <td>评论人</td>
+      <td>标题</td>
+      <td>评论内容</td>
+    </tr>
+    <% resData.forEach(function(item, index) { %>
+      <tr>
+        <td><%= (index+1) %></td>
+        <td><%= item.cid %></td>
+        <td>
+          <a href="/detail?cid=<%= item.cid %>">
+            <%= item.title %>
+          </a>
+        </td>
+        <td><%= item.val %></td>
+      </tr>
+    <% }) %>
+
+    <tr>
+      <td colspan="4">
+        <a href="/list?pageNo=1">首页</a>
+        <a href="/list?pageNo=<%= pageNo>1 ? parseInt(pageNo)-1 : 1 %>">上一页</a>
+        第<%= pageNo %>页/共<%= totalPage %>页
+        <a href="/list?pageNo=<%=pageNo<totalPage ? parseInt(pageNo)+1 : totalPage %>">下一页</a>
+        <a href="/list?pageNo=<%= totalPage %>">最后一页</a>
+        共<%= count %>条数据
+      </td>
+
+    </tr>
+  </table>
+</body>
+</html>

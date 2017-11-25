@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="/stylesheets/header.css">
+  </head>
+  <body>
+    <%- include header %>
+    <h1><%= title %></h1>
+
+    <% if(!username) { %>
+
+      <div class="">
+        <input type="button" value="登录" onclick="location.href='/login'">
+        <input type="button" value="注册" onclick="location.href='/registor'">
+      </div>
+
+    <% } else { %>
+
+      <div class="">
+        你好：<%= username %>
+        <input type="button" value="注销" onclick="location.href='/logout'">
+        <input type="button" value="评论" onclick="location.href='/comment'">
+      </div>
+
+    <% } %>
+
+
+
+    <hr>
+    <button class="btn">ajax提交</button>
+    <div id="msg"></div>
+
+    <script src="/js/jquery.js" charset="utf-8"></script>
+    <script src="/js/ajax.js" charset="utf-8"></script>
+  </body>
+</html>
